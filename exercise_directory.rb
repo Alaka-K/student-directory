@@ -4,9 +4,9 @@ def print_header
 end
 
 def print(students)
-  students.each.with_index(1) do |student, index| #.each.with_index iterates over array and assigns each element to an index beginning with 1. hence .with_index(1)
-    if student[:name].start_with?("T") # only prints student name that start with 'T'
-      puts "#{index}. #{student[:name]} (#{student[:cohort]} cohort)" 
+  students.each do |student|
+    if student[:name].length < 12 #only prints student whose name is shorter than 12
+      puts "#{student[:name]} (#{student[:cohort]} cohort)" 
     end
   end
 end
@@ -39,15 +39,15 @@ print(students)
 print_footer(students)
 
 # students = [
-#   ["Dr. Hannibal Lecter", :november],
-#   ["Darth Vader", :november],
-#   ["Nurse Ratched", :november],
-#   ["Michael Corleone", :november],
-#   ["Alex DeLarge", :november],
-#   ["The Wicked Witch of the West", :november],
-#   ["Terminator", :november],
-#   ["Freddy Krueger", :november],
-#   ["The Joker", :november],
-#   ["Joffrey Baratheon", :november],
-#   ["Norman Bates", :november]
+#   {name: "Dr. Hannibal Lecter", cohort: :november},
+#   {name: "Darth Vader", cohort: :november},
+#   {name: "Nurse Ratched", cohort: :november},
+#   {name: "Michael Corleone", cohort: :november},
+#   {name: "Alex DeLarge", cohort: :november},
+#   {name: "The Wicked Witch of the West", cohort: :november},
+#   {name: "Terminator", cohort: :november},
+#   {name: "Freddy Krueger", cohort: :november},
+#   {name: "The Joker", cohort: :november},
+#   {name: "Joffrey Baratheon", cohort: :november},
+#   {name: "Norman Bates", cohort: :november}
 # ]
