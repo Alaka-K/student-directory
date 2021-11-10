@@ -4,7 +4,11 @@ def print_header
 end
 
 def print(students)
-  students.each.with_index(1) {|student, index| puts "#{index}. #{student[:name]} (#{student[:cohort]} cohort)"}
+  students.each.with_index(1) do |student, index| #.each.with_index iterates over array and assigns each element to an index beginning with 1. hence .with_index(1)
+    if student[:name].start_with?("T") # only prints student name that start with 'T'
+      puts "#{index}. #{student[:name]} (#{student[:cohort]} cohort)" 
+    end
+  end
 end
 
 def print_footer(students)
